@@ -1,0 +1,541 @@
+{
+  "_format": "ethers-rs-sol-cache-3",
+  "paths": {
+    "artifacts": "out",
+    "build_infos": "out/build-info",
+    "sources": "src",
+    "tests": "test",
+    "scripts": "script",
+    "libraries": [
+      "lib"
+    ]
+  },
+  "files": {
+    "src/BeerBar.sol": {
+      "lastModificationDate": 1651149330000,
+      "contentHash": "fd4f4d998940954ebeffdffb49d8ec42",
+      "sourceName": "src/BeerBar.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/BeerToken.sol",
+        "src/IBeerBar.sol",
+        "src/IBeerToken.sol",
+        "src/IERC223.sol",
+        "src/IERC223Recipient.sol",
+        "src/Roles.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "BeerBar": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "BeerBar.sol/BeerBar.json"
+        }
+      }
+    },
+    "src/BeerToken.sol": {
+      "lastModificationDate": 1691397037194,
+      "contentHash": "1ff0d02a2834aca8a68f18d9f5bbe1d6",
+      "sourceName": "src/BeerToken.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/IBeerToken.sol",
+        "src/IERC223.sol",
+        "src/IERC223Recipient.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "BeerToken": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "BeerToken.sol/BeerToken.json"
+        }
+      }
+    },
+    "src/IBeerBar.sol": {
+      "lastModificationDate": 1651149330000,
+      "contentHash": "bcec7ce116dbf99535aef4a8122aca58",
+      "sourceName": "src/IBeerBar.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IBeerBar": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "IBeerBar.sol/IBeerBar.json"
+        }
+      }
+    },
+    "src/IBeerToken.sol": {
+      "lastModificationDate": 1651149330000,
+      "contentHash": "68ccd4c5b2fb27843ff30cb717beecdd",
+      "sourceName": "src/IBeerToken.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IBeerToken": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "IBeerToken.sol/IBeerToken.json"
+        }
+      }
+    },
+    "src/IERC223.sol": {
+      "lastModificationDate": 1651149330000,
+      "contentHash": "497ce4816f5f47d7382b7e335ce8c141",
+      "sourceName": "src/IERC223.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC223": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "IERC223.sol/IERC223.json"
+        }
+      }
+    },
+    "src/IERC223Recipient.sol": {
+      "lastModificationDate": 1651149330000,
+      "contentHash": "9b06730a5df85abc089ad7bcfd0f5736",
+      "sourceName": "src/IERC223Recipient.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC223Recipient": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "IERC223Recipient.sol/IERC223Recipient.json"
+        }
+      }
+    },
+    "src/Migrations.sol": {
+      "lastModificationDate": 1651149330000,
+      "contentHash": "e54eb7979894307b96901047d4b24d5d",
+      "sourceName": "src/Migrations.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "Migrations": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "Migrations.sol/Migrations.json"
+        }
+      }
+    },
+    "src/Roles.sol": {
+      "lastModificationDate": 1651149330000,
+      "contentHash": "c0d52b0ebcd8657185addfc7edbac52d",
+      "sourceName": "src/Roles.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "Roles": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "Roles.sol/Roles.json"
+        }
+      }
+    },
+    "src/SimpleToken.sol": {
+      "lastModificationDate": 1692538331317,
+      "contentHash": "fb741442b05231bff6dfd6a0b621af99",
+      "sourceName": "src/SimpleToken.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "SimpleToken": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "SimpleToken.sol/SimpleToken.json"
+        }
+      }
+    },
+    "src/SongVotingBar.sol": {
+      "lastModificationDate": 1651149330000,
+      "contentHash": "e552a75a1efbfe00da5b68650b2a3292",
+      "sourceName": "src/SongVotingBar.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/BeerBar.sol",
+        "src/BeerToken.sol",
+        "src/IBeerBar.sol",
+        "src/IBeerToken.sol",
+        "src/IERC223.sol",
+        "src/IERC223Recipient.sol",
+        "src/Roles.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "SongVotingBar": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "SongVotingBar.sol/SongVotingBar.json"
+        }
+      }
+    },
+    "src/utils/Context.sol": {
+      "lastModificationDate": 1696233524334,
+      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
+      "sourceName": "src/utils/Context.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "Context": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "Context.sol/Context.json"
+        }
+      }
+    },
+    "src/utils/KEVMCheats.sol": {
+      "lastModificationDate": 1696233495214,
+      "contentHash": "beaa429697d1c20afbd7687c211f1007",
+      "sourceName": "src/utils/KEVMCheats.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "storageLayout"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.6.2, <0.9.0",
+      "artifacts": {
+        "KEVMCheats": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "KEVMCheats.sol/KEVMCheats.json"
+        },
+        "KEVMCheatsBase": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "KEVMCheats.sol/KEVMCheatsBase.json"
+        }
+      }
+    }
+  }
+}

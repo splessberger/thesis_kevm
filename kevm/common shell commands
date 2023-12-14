@@ -1,0 +1,6 @@
+rm -rf simpleTransferSuccess/
+
+kevm kompile simpletoken-transfer-success-spec.k --pyk --target haskell --syntax-module SIMPLETOKEN-VERIFICATION --main-module SIMPLETOKEN-VERIFICATION --output simpleTransferSuccess/haskell
+
+kevm prove simpletoken-transfer-success-spec.k --backend haskell --definition simpleTransferSuccess/haskell/
+
