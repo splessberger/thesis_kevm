@@ -1,9 +1,12 @@
 kevm/spec/
 act/out/
 kontrol_beertoken/out/
+kontrol_beertoken/cache/
 kontrol_simpletoken/out/
-kontorl_simpletoken/results/
+kontrol_simpletoken/cache/
+kontrol_simpletoken/results/
 kontrol_cve_tests/out/
-kontorl_cve_tests/results/
+kontrol_cve_tests/cache/
+kontrol_cve_tests/results/
 \[old\]_foundry_first_steps/out/
 \[old\]_foundry_beerbar_tests/out/
