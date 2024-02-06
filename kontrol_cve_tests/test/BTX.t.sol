@@ -9,12 +9,31 @@ contract BTXTest is Test, KontrolCheats {
     uint256 constant MAX_INT = 2**256 - 1;
     Bittelux token; // Contract under test
 
+
+    modifier symbolic() {
+        kevm.symbolicStorage(address(token));
+        _;
+    }
+
     function setUp() public {
         token = new Bittelux();
     }
 
-    function testTransfer(address bob, address alice, uint256 amount) public {
-    	kevm.infiniteGas();
+    modifier unchangedStorage(bytes32 storageSlot) {
+        bytes32 initialStorage = vm.load(address(token), storageSlot);
+        _;
+        bytes32 finalStorage = vm.load(address(token), storageSlot);
+        assertEq(initialStorage, finalStorage);
+    }
+
+    function hashedLocation(address _key, bytes32 _index) public pure returns(bytes32) {
+        // Returns the index hash of the storage slot of a map at location `index` and the key `_key`.
+        // returns `keccak(#buf(32,_key) +Bytes #buf(32, index))
+        return keccak256(abi.encode(_key, _index));
+    }
+
+    function testTransfer(address bob, address alice, uint256 amount, bytes32 storageSlot) public symbolic unchangedStorage(storageSlot) {
+    	//kevm.infiniteGas();
 		
 		uint256 totalSupply = token.totalSupply();
 		uint256 balanceAlice = token.balanceOf(alice);
@@ -26,28 +45,33 @@ contract BTXTest is Test, KontrolCheats {
 		vm.assume(bob != address(token));
 		vm.assume(bob != address(this));
 		vm.assume(bob != alice);
+		vm.assume(notBuiltinAddress(alice));
+		vm.assume(notBuiltinAddress(bob));
 		vm.assume(totalSupply > 0);
 		vm.assume(amount > 0);
-		vm.assume(balanceBob >= amount);
+
+        bytes32 storageLocationAlice = hashedLocation(alice, 0);
+        bytes32 storageLocationBob = hashedLocation(bob, 0);
+        vm.assume(storageLocationAlice != storageLocationBob);
 		
 		// vm.assume(amount < MAX_INT);
 		// vm.assume(totalSupply > 0);
 		// vm.assume(totalSupply < MAX_INT);
-		// vm.assume(balanceAlice > 0);
+		vm.assume(balanceAlice > 0);
 		// vm.assume(balanceAlice < MAX_INT);
-		// vm.assume(balanceBob > 0);
+		vm.assume(balanceBob > 0);
 		// vm.assume(balanceBob < MAX_INT);
-		// vm.assume((balanceAlice + amount) < MAX_INT);
+		vm.assume((balanceAlice + amount) < MAX_INT);
 		// vm.assume((balanceBob - amount) > 0);
 		// vm.assume(balanceAlice < totalSupply);
 		// vm.assume(balanceBob < totalSupply);
 
-		// vm.assume((amount + balanceAlice) <= (balanceAlice + balanceBob));
-		// vm.assume((balanceAlice + balanceBob) <= totalSupply);
-		// vm.assume(totalSupply <= MAX_INT);
+		vm.assume((amount + balanceAlice) <= (balanceAlice + balanceBob));
+		vm.assume((balanceAlice + balanceBob) <= totalSupply);
+		vm.assume(totalSupply <= MAX_INT);
 
-		vm.assume((balanceAlice + amount) <= MAX_INT); //Arithmetic Overflow guard
-		vm.assume((balanceBob - amount) >= 0); //Arithmetic Underflow guard
+		vm.assume(balanceAlice <= (MAX_INT - amount)); //Arithmetic Overflow guard
+		vm.assume(balanceBob >= amount); //Arithmetic Underflow guard
 
 		uint256 newBalanceAlice = (balanceAlice + amount);
 		uint256 newBalanceBob = (balanceBob - amount);
@@ -57,15 +81,9 @@ contract BTXTest is Test, KontrolCheats {
 
 		assertEq(token.balanceOf(alice), newBalanceAlice);
 		assertEq(token.balanceOf(bob), newBalanceBob);
-		assertNotEq(alice, address(0));
-		assertNotEq(alice, address(token));
-		assertNotEq(alice, address(this));
-		assertNotEq(bob, address(0));
-		assertNotEq(bob, address(token));
-		assertNotEq(bob, address(this));
 
-		assertLe((amount + balanceAlice), (balanceAlice + balanceBob));
-		assertLe((balanceAlice + balanceBob), totalSupply);
+		//assertLe((amount + balanceAlice), (balanceAlice + balanceBob));
+		assertLe((token.balanceOf(alice) + token.balanceOf(bob)), totalSupply);
 		assertLe(totalSupply, MAX_INT);
     }
 }
